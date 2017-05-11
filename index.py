@@ -161,7 +161,7 @@ class Ice():
 # this has a certain interaction with so-called "optional" subroutines.)
 # another, better, simpler, example might be advanceable ice :P
 
-#https://scontent.xx.fbcdn.net/v/t34.0-12/18337296_1700113830004849_811033531_n.png?oh=c02427db1366bb13726a98b7707cd531&oe=5914181C
+# http://i.imgur.com/vxB2kXD.png
 icet = Ice()
 icet.subtype = ('Barrier', 'Tracer')
 icet.name = 'Ice-T'
