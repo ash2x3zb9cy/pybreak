@@ -82,7 +82,7 @@ class Breaker():
 
 	# modifiable behaviour for weird cards like Paperclip
 	def break_ice(self, ice, ignore_optional_subs=False):
-		print('Using {} to break {}.'.format(self.name, ice.name))
+		# print('Using {} to break {}.'.format(self.name, ice.name))
 
 		strength = get_or_call(self.strength, ice)
 		cost = 0
@@ -93,7 +93,7 @@ class Breaker():
 		if not ignore_optional_subs:
 			subs_remaining += get_or_call(ice.optional_subroutine_count)
 
-		print('{} has {} strength and {} subroutines.'.format(ice.name, target_strength, subs_remaining))
+		# print('{} has {} strength and {} subroutines.'.format(ice.name, target_strength, subs_remaining))
 
 		# Pump
 		while strength < target_strength:
@@ -107,7 +107,7 @@ class Breaker():
 			cost += pumpcost
 			strength += get_or_call(self.boost_amount, ice)
 
-			print('Pumped to {} for {} creds (total {})'.format(strength, pumpcost, cost))
+			# print('Pumped to {} for {} creds (total {})'.format(strength, pumpcost, cost))
 
 		# Break
 		while subs_remaining > 0:
@@ -115,7 +115,7 @@ class Breaker():
 			break_amount = get_or_call(self.break_amount, ice)
 			cost += break_cost
 			subs_remaining -= break_amount
-			print('Broke {} subroutine(s) for {} creds (total {}).'.format(break_amount, break_cost, cost))
+			# print('Broke {} subroutine(s) for {} creds (total {}).'.format(break_amount, break_cost, cost))
 		return cost
 
 # If sth is a function, calls it with args, otherwise returns it
