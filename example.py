@@ -1,4 +1,4 @@
-
+from cards import Ice, Breaker
 
 # Example implementation for funky cards
 # Subclassing would be better and would allow for grouping of similar effects
@@ -13,7 +13,7 @@ icet.subtype = ('Barrier', 'Tracer')
 icet.name = 'Ice-T'
 
 # rather than subclass and add an "advancements" field here's a hack
-icet_advancements = 4
+icet_advancements = 0
 
 # X strength
 icet.strength = lambda *args: icet_advancements
@@ -36,6 +36,6 @@ bread.break_cost = 1
 bread.break_amount = 1
 bread.strength = 2
 
-print(
-	"Gingerbread breaks a {}-advanced Ice-T for {} credits.".format(
-		icet_advancements, bread.break_ice(icet)))
+while icet_advancements < 7:
+	icet_advancements += 1
+	print("Gingerbread breaks a {}-advanced Ice-T for {} credits.".format(icet_advancements, bread.break_ice(icet)))
